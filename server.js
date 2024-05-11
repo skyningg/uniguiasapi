@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const uniguiasRoutes = require('./routes/uniguiasRoutes');
+//const licenciaturaRoutes = require('./routes/licenciaturaRoutes');
 
 const app = express();
 const port = 3200;
@@ -10,14 +11,14 @@ mongoose.connect('mongodb://localhost:27017/uniguias', {
   useUnifiedTopology: true,
 });
 
-//const db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-//db.once('open', () => {
-//  console.log('Connected to the database');
-//});
+/*mongoose.connect('mongodb://localhost:27017/licenciaturas', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});*/
 
 app.use(express.json());
-app.use('/uni', uniguiasRoutes);
+app.use('/uni', uniguiasRoutes); // Asigna /uniguias al router de uniguias
+//app.use('/lic', licenciaturaRoutes); // Asigna /licenciaturas al router de licenciaturas
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

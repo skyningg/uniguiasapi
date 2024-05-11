@@ -6,6 +6,6 @@ const universitySchema = new mongoose.Schema({
 	city: { type: String, required: true },
 	ubicacion: { type: String, required: true },
 	type: { type:String, required: true },
-	modalidad: { type: String, required: true }
+	photo: { type: String, required: true }
 });
 module.exports = mongoose.model('uniguias', universitySchema);
